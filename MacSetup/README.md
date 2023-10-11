@@ -6,6 +6,7 @@ This document will aim to describe the steps required to setup a Mac for Buildki
 
 - A Buildkite account. You can get a free account at the [Buildkite website](https://buildkite.com/).
 - [Homebrew](https://brewh.sh) installed.
+- Docker.
 
 ## Install the agent
 
@@ -20,7 +21,7 @@ The next sections assume that all your Homebrew files are installed in `/opt/hom
 
 ## Configure the agent
 
-The agent needs to be configured with your Buildkite agent token. You can find your agent token on the [Buildkite Agents page](https://buildkite.com/organizations/<ORG_NAME>/agents).
+The agent needs to be configured with your Buildkite agent token. You can find your agent token on the Buildkite Agents page **https://buildkite.com/organizations/<ORG_NAME>/agents** .
 
 The configuration file is located at the following location:
 `/opt/homebrew/etc/buildkite-agent/buildkite-agent.cfg`
@@ -29,7 +30,7 @@ The following values need to be set in the configuration file:
 
 ### `token`
 
-This is your buildkite token. You can find it on the [Buildkite Agents page](https://buildkite.com/organizations/<ORG_NAME>/agents).
+This is your buildkite token. You can find it on the Buildkite Agents page **https://buildkite.com/organizations/<ORG_NAME>/agents* .
 
 ### `name`
 
@@ -62,7 +63,7 @@ To start the agent run the following command:
 buildkite-agent start
 ```
 
-You should now be abl to see the  agent running on the [Buildkite Agents page](https://buildkite.com/organizations/<ORG_NAME>/agents).
+You should now be able to see the  agent running on the Buildkite Agents page **https://buildkite.com/organizations/<ORG_NAME>/agents** .
 
 ## Docker Configuration
 
@@ -70,4 +71,4 @@ To run docker builds you will need to configure the agent to run docker builds. 
 
 Apart from this, you will also need to add your actual build paths to the docker Filesharing settings. This is done by going to `Docker -> Preferences -> Resources -> File Sharing` and adding the build paths to the list of shared folders.
 
-In the event that this does not work you may need to edit the docker configuration file directly. This is located at `~/Library/Group Containers/group.com.docker/settings.json`. You will need to add the build paths to the `filesharingDirectories` array.
+In the event that this does not work, you may need to edit the docker configuration file directly. This is located at `~/Library/Group Containers/group.com.docker/settings.json`. You will need to add the build paths to the `filesharingDirectories` array.
